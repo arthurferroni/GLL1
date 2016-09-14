@@ -286,28 +286,6 @@ public class Analiser {
 				break;
 			case Library.nt_operar_relacionalmente_c2:
 				break;	
-			
-			case Library.nt_parametros:
-				break;
-			case Library.nt_parametros_c2:
-				break;
-			case Library.nt_parametros_i:
-				break;
-				
-			case Library.nt_tipo:
-				break;
-			case Library.nt_tipo_c2:
-				break;
-			case Library.nt_tipo_c3:
-				break;
-			case Library.nt_tipo_c4:
-				break;
-			case Library.nt_tipo_c5:
-				break;
-			case Library.nt_whos_next:
-				break;
-			case Library.nt_whos_next_c2:
-				break;
 				
 			case Library.nt_epsilon:
 				break;
