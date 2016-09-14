@@ -1,0 +1,53 @@
+package br.uefs.model;
+
+public class Library {
+	
+	public static final int tk_programa             =  1;
+    public static final int tk_const                =  2;
+    public static final int tk_var                  =  3;
+    public static final int tk_funcao               =  4;
+    public static final int tk_inicio               =  5;
+    public static final int tk_fim                  =  6;
+    public static final int tk_se                   =  7;
+    public static final int tk_entao                =  8;
+    public static final int tk_senao                =  9;
+    public static final int tk_enquanto             = 10;
+    public static final int tk_faca                 = 11;
+    public static final int tk_leia                 = 12;
+    public static final int tk_escreva              = 13;
+    public static final int tk_inteiro              = 14;
+    public static final int tk_real                 = 15;
+    public static final int tk_booleano             = 16;
+    public static final int tk_verdadeiro           = 17;
+    public static final int tk_falso                = 18;
+    public static final int tk_cadeia               = 19;
+    public static final int tk_caractere            = 20;
+    public static final int tk_nao                  = 21;
+    public static final int tk_e                    = 22;
+    public static final int tk_ou                   = 23;
+    public static final int tk_soma                 = 24;
+    public static final int tk_subtracao            = 25;
+    public static final int tk_multiplicacao        = 26;
+    public static final int tk_divisao              = 27;
+    public static final int tk_diferente            = 28;
+    public static final int tk_igual                = 29;
+    public static final int tk_menor                = 30;
+    public static final int tk_menorigual           = 31;
+    public static final int tk_maior                = 32;
+    public static final int tk_maiorigual           = 33;
+    public static final int tk_identificador        = 34;
+    public static final int tk_numero               = 35;
+    public static final int tk_pontoevirgula        = 36;
+    public static final int tk_virgula              = 37;
+    public static final int tk_abrir_parentese      = 38;
+    public static final int tk_fechar_parentese     = 39;
+    public static final int tk_cadeia_de_caracteres = 40;
+    public static final int tk_caractere_l          = 41;
+    
+	public static final int tk_fimarq               = 42;
+	public static final int tk_epsilon              = 43;
+
+// NÃO-TERMINAIS //
+
+	
+}

@@ -1,0 +1,31 @@
+package br.uefs.model;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+
+	public static void main(String[] args) {
+		try {
+			Main.enderecar_producoes();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	static void enderecar_producoes() throws IOException
+	{
+		BufferedReader br = new BufferedReader(new FileReader("producoes.in"));
+		String prod = br.readLine();
+		while(prod!=null)
+		{
+			prod = prod.trim();
+			System.err.println(prod.toLowerCase());
+			prod = br.readLine();
+		}
+		
+	}
+
+}
