@@ -286,32 +286,14 @@ public class Analiser {
 				break;
 			case Library.nt_operar_relacionalmente_c2:
 				break;	
+			
 			case Library.nt_parametros:
 				break;
 			case Library.nt_parametros_c2:
 				break;
 			case Library.nt_parametros_i:
 				break;
-			case Library.nt_passa_param_i_c2:
-				break;
-			case Library.nt_possible_func:
-				break;
-			case Library.nt_possible_func_c2:
-				break;
-			case Library.nt_retorno_func:
-				break;
-			case Library.nt_termo:
-				break;
-			case Library.nt_termo_e:
-				break;
-			case Library.nt_termo_i:
-				break;
-			case Library.nt_termo_i_c2:
-				break;
-			case Library.nt_termo_i_e:
-				break;
-			case Library.nt_termo_i_e_c2:
-				break;
+				
 			case Library.nt_tipo:
 				break;
 			case Library.nt_tipo_c2:
