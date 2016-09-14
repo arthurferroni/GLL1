@@ -41,6 +41,7 @@ public class Analiser {
 		{
 			String []tk_tb =  linha.split(";");
 			Arrays.fill(tb_predicao[i], -1); // 
+			
 			for(int x = 0; x < tk_tb.length; x++)
 				tb_predicao[i][x] = get_nt_id(tk_tb[x]);
 			linha = br.readLine();
@@ -327,6 +328,8 @@ public class Analiser {
 				break;
 			case Library.nt_epsilon:
 				break;
+				
+		
 		}
 	}
 	
