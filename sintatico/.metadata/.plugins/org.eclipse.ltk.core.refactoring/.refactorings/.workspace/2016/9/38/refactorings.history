@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;PBL-Compiladores-lexico&apos;" deleteContents="false" description="Delete resource &apos;PBL-Compiladores-lexico&apos;" element1="/PBL-Compiladores-lexico" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1473936647799"/>
+</session>

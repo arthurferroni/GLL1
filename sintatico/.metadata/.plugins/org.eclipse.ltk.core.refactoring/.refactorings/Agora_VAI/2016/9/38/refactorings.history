@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;br.uefs.control.Producao.a_pilha&apos; in &apos;br.uefs.control.Producao&apos;&#x0D;&#x0A;- Original project: &apos;Agora_VAI&apos;&#x0D;&#x0A;- Original element: &apos;br.uefs.control.Producao.a_pilha&apos;&#x0D;&#x0A;- Getter method name: &apos;getA_pilha&apos;&#x0D;&#x0A;- Setter method name: &apos;setA_pilha&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;a_pilha&apos;" flags="589830" getter="getA_pilha" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;br.uefs.control{Sintatico.java[Producao^a_pilha" insertion="1" setter="setA_pilha" stamp="1473940815338" version="1.0" visibility="1"/>
+</session>

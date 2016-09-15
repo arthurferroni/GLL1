@@ -1,0 +1,6 @@
+package br.uefs.control;
+
+public class Sintatico {
+	static stack<int> pilha = new stack<int>();
+	
+}

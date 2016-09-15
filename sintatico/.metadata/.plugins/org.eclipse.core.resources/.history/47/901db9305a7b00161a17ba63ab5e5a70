@@ -1,0 +1,41 @@
+		constantes
+		
+		tokens.add(Library.tk_const);
+		tokens.add(Library.tk_inicio);
+		tokens.add(Library.tk_inteiro);
+		tokens.add(Library.tk_identificador);
+		tokens.add(Library.tk_igual);
+		tokens.add(Library.tk_numero);
+		tokens.add(Library.tk_virgula);
+		tokens.add(Library.tk_identificador);
+		tokens.add(Library.tk_igual);
+		tokens.add(Library.tk_numero);
+		tokens.add(Library.tk_pontoevirgula);
+		tokens.add(Library.tk_inteiro);
+		tokens.add(Library.tk_identificador);
+		tokens.add(Library.tk_igual);
+		tokens.add(Library.tk_numero);
+		tokens.add(Library.tk_virgula);
+		tokens.add(Library.tk_identificador);
+		tokens.add(Library.tk_igual);
+		tokens.add(Library.tk_numero);
+		tokens.add(Library.tk_pontoevirgula);
+		tokens.add(Library.tk_fim);
+		
+		var
+		
+			pilha.push(Library.tk_dolar);
+		pilha.push(Library.nt_programa);
+		tokens.add(Library.tk_var);
+		tokens.add(Library.tk_inicio);
+		tokens.add(Library.tk_inteiro);
+		tokens.add(Library.tk_identificador);
+		tokens.add(Library.tk_virgula);
+		tokens.add(Library.tk_identificador);
+		tokens.add(Library.tk_pontoevirgula);
+		tokens.add(Library.tk_inteiro);
+		tokens.add(Library.tk_identificador);
+		tokens.add(Library.tk_virgula);
+		tokens.add(Library.tk_identificador);
+		tokens.add(Library.tk_pontoevirgula);
+		tokens.add(Library.tk_fim);

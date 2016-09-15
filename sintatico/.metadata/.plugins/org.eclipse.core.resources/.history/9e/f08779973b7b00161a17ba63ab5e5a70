@@ -1,0 +1,11 @@
+package br.uefs.control;
+
+import java.util.Stack;
+
+public class Sintatico {
+	
+	static Stack<Integer> pilha = new Stack<Integer>();
+	
+	
+}
+

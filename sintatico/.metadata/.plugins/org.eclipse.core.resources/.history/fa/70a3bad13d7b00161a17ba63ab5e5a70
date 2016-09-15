@@ -1,0 +1,51 @@
+package br.uefs.control;
+import br.uefs.lib.*;
+
+import java.util.LinkedList;
+import java.util.Stack;
+
+public class Sintatico {
+	
+	static Stack<Integer> pilha = new Stack<Integer>();
+	static LinkedList<Integer> tokens = new LinkedList<Integer>();
+	Producao prod = new Producao(pilha); 
+	
+	public void analises()
+	{
+		int valor;
+		while(true){
+			valor = pilha.peek();
+			if(valor == Library.tk_dolar && tokens.isEmpty() )
+			{
+				
+			}
+			
+		}
+	}
+	
+	
+}
+
+class Producao{
+	
+	private Stack<Integer> a_pilha; 
+	
+	public Producao(Stack<Integer> p)
+	{
+		this.setA_pilha(p);
+	}
+	
+	
+	public void gerador()
+	{
+		
+	}
+
+	
+	public Stack<Integer> getA_pilha() {
+		return this.a_pilha;
+	}
+	public void setA_pilha(Stack<Integer> a_pilha) {
+		this.a_pilha = a_pilha;
+	}
+}
