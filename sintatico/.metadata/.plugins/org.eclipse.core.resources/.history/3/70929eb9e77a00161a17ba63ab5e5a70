@@ -131,6 +131,7 @@ public class Analiser {
 			case Library.nt_chama_ou_atribui_c2:  //TODO
 				break;
 			case Library.nt_comandos://TODO
+				
 				break;
 			case Library.nt_comandos_c2://TODO
 				break;

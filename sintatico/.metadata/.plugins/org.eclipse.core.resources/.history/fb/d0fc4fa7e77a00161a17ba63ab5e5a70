@@ -131,6 +131,7 @@ public class Analiser {
 			case Library.nt_chama_ou_atribui_c2:  //TODO
 				break;
 			case Library.nt_comandos://TODO
+				
 				break;
 			case Library.nt_comandos_c2://TODO
 				break;
@@ -269,8 +270,6 @@ public class Analiser {
 			case Library.nt_inicio_const_var_func:
 				break;
 			case Library.nt_inicio_func:
-				pilha.push(Library.nt_dec_main);
-				pilha.push(Library.nt_dec_func);
 				break;
 			case Library.nt_inicio_var_func:
 				break;

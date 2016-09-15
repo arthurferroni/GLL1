@@ -130,27 +130,25 @@ public class Analiser {
 				break;
 			case Library.nt_chama_ou_atribui_c2:  //TODO
 				break;
-			case Library.nt_comandos://TODO
+			case Library.nt_comandos:
 				break;
-			case Library.nt_comandos_c2://TODO
+			case Library.nt_comandos_c2:
 				break;
-			case Library.nt_comandos_c3://TODO
+			case Library.nt_comandos_c3:
 				break;
-			case Library.nt_comandos_c4://TODO
+			case Library.nt_comandos_c4:
 				break;
-			case Library.nt_comandos_c5://TODO
+			case Library.nt_comandos_c5:
 				break;
-			case Library.nt_comandos_c6://TODO
+			case Library.nt_comandos_c6:
 				break;
-			case Library.nt_comandos_c7://TODO
+			case Library.nt_comandos_c7:
 				break;
-			case Library.nt_corpo: // TODO 
-				pilha.push(Library.nt_corpo);
-				pilha.push(Library.nt_comandos);
+			case Library.nt_corpo:
 				break;
-			case Library.nt_corpo_c2: // TODO 
+			case Library.nt_corpo_c2:
 				break;
-			case Library.nt_dec_const:// TODO 
+			case Library.nt_dec_const:
 				break;
 			case Library.nt_dec_const_continuo:
 				break;
@@ -250,7 +248,6 @@ public class Analiser {
 			case Library.nt_fator_e_c4:
 				break;
 			case Library.nt_fator_e_c5:
-				
 				break;
 			case Library.nt_fator_i:
 				break;
@@ -269,8 +266,6 @@ public class Analiser {
 			case Library.nt_inicio_const_var_func:
 				break;
 			case Library.nt_inicio_func:
-				pilha.push(Library.nt_dec_main);
-				pilha.push(Library.nt_dec_func);
 				break;
 			case Library.nt_inicio_var_func:
 				break;
@@ -308,7 +303,7 @@ public class Analiser {
 				break;	
 			case Library.nt_parametros:
 				break;
-			case Library.nt_parametros_c2://TODO
+			case Library.nt_parametros_c2:
 				break;
 			case Library.nt_parametros_i:
 				break;
@@ -329,43 +324,29 @@ public class Analiser {
 				break;
 			case Library.nt_retorno_func:
 				break;
-			case Library.nt_termo: // TODO
+			case Library.nt_termo:
 				break;
 			case Library.nt_termo_e:
-				pilha.push(Library.nt_fator_i_e);
-				pilha.push(Library.nt_fator_e);
 				break;
-			case Library.nt_termo_i: // TODO
+			case Library.nt_termo_i:
 				break;
 			case Library.nt_termo_i_c2:
 				break;
 			case Library.nt_termo_i_e:
-				pilha.push(Library.nt_fator_i_e);
-				pilha.push(Library.nt_fator_e);
-				pilha.push(Library.nt_op_mais_menos);
 				break;
 			case Library.nt_termo_i_e_c2:
 				break;
 			case Library.nt_tipo:
-				pilha.push(Library.tk_inteiro);
 				break;
 			case Library.nt_tipo_c2:
-				pilha.push(Library.tk_real);
 				break;
 			case Library.nt_tipo_c3:
-				pilha.push(Library.tk_booleano);
 				break;
 			case Library.nt_tipo_c4:
-				pilha.push(Library.tk_cadeia);
 				break;
 			case Library.nt_tipo_c5:
-				pilha.push(Library.tk_caractere);
 				break;
 			case Library.nt_whos_next:
-				pilha.push(Library.tk_pontoevirgula);
-				pilha.push(Library.tk_fechar_parentese);
-				pilha.push(Library.nt_passa_param);
-				pilha.push(Library.tk_abrir_parentese);
 				break;
 			case Library.nt_whos_next_c2:
 				break;
