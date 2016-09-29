@@ -1,6 +1,15 @@
 package br.uefs.control;
 import br.uefs.lib.*;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Stack;
@@ -10,7 +19,10 @@ public class Sintatico {
 	static Stack<Integer> pilha = new Stack<Integer>();
 	static LinkedList<Token> tokens_int = new LinkedList<Token>();
 	static LinkedList<Integer> tokens = new LinkedList<Integer>();
-	static int[][]_matriz = new int[800][800];
+	static LinkedList<String> linha_tokens = new LinkedList<String>();
+	static int size = 500;
+	static int[][]_matriz = new int[size][size];
+	static String[] tokens_id = new String[45];
 	int i = 0 ;
 	
 	
@@ -19,8 +31,73 @@ public class Sintatico {
 		new Sintatico().analises();
 		
 	}
+	
+
+	public void initTokensId(){
+		tokens_id[Library.tk_programa] 				= "tk_programa";
+		tokens_id[Library.tk_const]					= "tk_const";
+	    tokens_id[Library.tk_var]				 	= "tk_var";
+	    tokens_id[Library.tk_funcao]			 	= "tk_funcao";
+	    tokens_id[Library.tk_inicio]				= "tk_inicio";
+	    tokens_id[Library.tk_fim]					= "tk_fim";
+	    tokens_id[Library.tk_se] 					= "tk_se";
+	    tokens_id[Library.tk_entao] 				= "tk_entao";
+	    tokens_id[Library.tk_senao] 				= "tk_senao";
+	    tokens_id[Library.tk_enquanto] 				= "tk_enquanto";
+	    tokens_id[Library.tk_faca] 					= "tk_faca";
+	    tokens_id[Library.tk_leia] 					= "tk_leia";
+	    tokens_id[Library.tk_escreva] 				= "tk_escreva";
+	    tokens_id[Library.tk_inteiro] 				= "tk_inteiro";
+	    tokens_id[Library.tk_real] 					= "tk_real";
+	    tokens_id[Library.tk_booleano] 				= "tk_booleano";
+	    tokens_id[Library.tk_verdadeiro] 			= "tk_verdadeiro";
+	    tokens_id[Library.tk_falso] 				= "tk_falso";
+	    tokens_id[Library.tk_cadeia] 				= "tk_cadeia";
+	    tokens_id[Library.tk_caractere] 			= "tk_caractere";
+	    tokens_id[Library.tk_nao] 					= "tk_nao";
+	    tokens_id[Library.tk_e] 					= "tk_e";
+	    tokens_id[Library.tk_ou] 					= "tk_ou";
+	    tokens_id[Library.tk_soma] 					= "tk_soma";
+	    tokens_id[Library.tk_subtracao] 			= "tk_subtracao";
+	    tokens_id[Library.tk_multiplicacao] 		= "tk_multiplicacao";
+	    tokens_id[Library.tk_divisao] 				= "tk_divisao";
+	    tokens_id[Library.tk_diferente] 			= "tk_diferente";
+	    tokens_id[Library.tk_igual] 				= "tk_igual";
+	    tokens_id[Library.tk_menor] 				= "tk_menor";
+	    tokens_id[Library.tk_menorigual] 			= "tk_menorigual";
+	    tokens_id[Library.tk_maior] 				= "tk_maior";
+	    tokens_id[Library.tk_maiorigual] 			= "tk_maiorigual";
+	    tokens_id[Library.tk_identificador] 		= "tk_identificador";
+	    tokens_id[Library.tk_numero] 				= "tk_numero";
+	    tokens_id[Library.tk_pontoevirgula] 		= "tk_pontoevirgula";
+	    tokens_id[Library.tk_virgula] 				= "tk_virgula";
+	    tokens_id[Library.tk_abrir_parentese] 		= "tk_abrir_parentese";
+	    tokens_id[Library.tk_fechar_parentese] 		= "tk_fechar_parentese";
+	    tokens_id[Library.tk_cadeia_de_caracteres] 	= "tk_cadeia_de_caracteres";
+	    tokens_id[Library.tk_caractere_l] 			= "tk_caractere_l";
+	    tokens_id[Library.tk_dolar] 				= "tk_dolar";
+		tokens_id[Library.tk_fimarq] 				= "tk_fimarq";
+		tokens_id[Library.tk_epsilon] 				= "tk_epsilon";
+	}
+	public void initializeMatriz(){
+		for(int i = 0; i < size; i++){
+			for(int j = 0; j < size; j++){
+				_matriz[i][j] = -1;
+			}
+		}
+	}
+	public int returnTokenId(String tk){
+		for (int i = 1; i < tokens.lastIndexOf(tokens_id) + 1; i++){
+			if(tokens.get(i).equals(tk)){
+				return i;
+			}
+		}
+		return 0;
+	}
+	
 	public void startMatriz()
 	{
+		initializeMatriz();
 		// PROGRAMA
 		_matriz[Library.nt_programa][Library.tk_programa] = Library.nt_inicio_func; 
 		_matriz[Library.nt_programa][Library.tk_var] = Library.nt_inicio_var_func; 
@@ -303,6 +380,84 @@ public class Sintatico {
 		
 		// TODO AQUI
 	}
+	
+	public void openFile() throws IOException{
+		try {
+			File dir = new File("./programas");
+			if (!dir.exists()) {
+				System.out.println("NAO EXISTE");
+				System.exit(-1);
+			}
+			File listaDeArquivos[] = dir.listFiles();
+			
+			//Percorre os arquivos na pasta
+			for (int i = 0; i < listaDeArquivos.length; i++) {
+				//Se for diretorio ou for arquivo de saida , passa pro proximo
+				if (listaDeArquivos[i].isDirectory()
+                   || listaDeArquivos[i].getName().startsWith("t_")
+                   || listaDeArquivos[i].getName().endsWith(".jar"))
+					continue;
+
+				//verificando se o arquivo existe para comecar a analisar
+				if (listaDeArquivos[i].exists()) {
+					System.out.println("Lendo "+listaDeArquivos[i].getName());
+					readLines(listaDeArquivos[i]);
+				}
+			}
+		}
+		catch (NullPointerException ex) {
+			ex.printStackTrace();
+		}
+		System.out.println("Leitura finalizada. Resultados em ./saidas/t_*");
+					
+	}
+	
+	public void readLines(File FILE_NAME) throws IOException{
+		FileInputStream stream = null;
+		try {
+			stream = new FileInputStream(FILE_NAME);
+				
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		InputStreamReader reader = new InputStreamReader(stream);
+		BufferedReader br = new BufferedReader(reader);
+	
+		File file = new File("./saidas/p_"+FILE_NAME.getName());
+		//FileWriter writer = new FileWriter(file);
+		//PrintWriter gravarArq = new PrintWriter(writer);
+	
+		String linha = null;
+		//System.out.println();
+		try {
+			linha = br.readLine();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		String elementos[];
+		while (linha != null) {
+			if(!linha.equals("")){
+				elementos = linha.trim().split(" ");
+				//System.out.println("Lendo "+elementos[1]);
+				
+				tokens.add(returnTokenId(elementos[1]));
+				linha_tokens.add(elementos[0]);
+			}
+			try {
+				linha = br.readLine();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		stream.close();
+		//writer.close();
+		br.close();
+	}
+	
 	public void analises()
 	{
 		pilha.push(Library.tk_dolar);

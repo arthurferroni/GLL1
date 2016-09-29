@@ -1,4 +1,6 @@
 INDEX VERSION 1.127+C:\Users\Arthu\OneDrive\Documentos\GitHub\GLL1\sintatico\.metadata\.plugins\org.eclipse.jdt.core
-82081602.index
-3673149045.index
 3508450539.index
+1000038745.index
+2624443154.index
+23468618.index
+3673149045.index
